@@ -1,0 +1,12 @@
+Quick Wins
+Inline critical CSS for your .page, .section, and primary wrap styles.
+
+Preload or inline your small Markdown files (8 KB/1 KB).
+
+Lazy-load large images.
+
+Bundle & defer third‑party libs (marked.js) so they don’t block initial render.
+
+Use modern image formats and responsive sizing.
+
+If you apply those five, you should see your First Contentful Paint and Time‑to‑Interactive drop well under 2 s on most mid‑tier connections. Let me know which area you’d like to dive into first!
