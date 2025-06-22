@@ -10,36 +10,22 @@
 /* FULL-PAGE SECTIONS */
 .page {
   overflow-x: hidden;
-  font-family: Arial, sans-serif;
   caret-color: transparent;
 }
 
-
 .section {
+  position: relative;
   width: 100%;
   height: 100vh;
 }
 
-.sec1,
-.sec3 {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  gap: 0;
-}
-
-.sec3 {
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-/* SECTION 1 – GRID BLOCKS */
-.blocks {
+/*--------------------SECTION 1--------------------*/
+.grid__row {
   display: flex;
   height: 25%;
 }
 
-.block {
+.grid__cell {
   flex: 0 0 20%;
   display: flex;
   align-items: center;
@@ -49,7 +35,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.block-text{
+.grid__cell--text{
   color: #000;
   text-align: center;
   font-family: "Noto Serif";
@@ -58,7 +44,7 @@
   line-height: normal;
 }
 
-.r1x3 {
+[data-row="2"] [data-col="3"] {
   color: #000;
   font-family: "Noto Serif JP";
   font-size: 16px;
@@ -66,115 +52,24 @@
   line-height: normal;
 }
 
-/* SECTION 2 LAYOUT */
-
-/* ABOUT & CONTENT */
-.about {
-  display: flex;
-  width: 100%;
-  padding: 0rem;
-  align-items: center;
-}
-
-.content {
-  flex: 1;
-  padding-inline: 20%;
-  gap: 100px;
-  border-bottom: 1px solid #424040;
-}
-
-/* IMAGE & TEXT */
-.image {
-  width: 30%;
-  aspect-ratio: 1/1;
-  border-radius: 300px;
-  background: url("asset/image/image.jpeg") lightgray 50% / cover no-repeat;
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* FOOTER */
-.footer {
-  display: flex;
-  flex: 0 0 auto;
-  padding: 1rem;
-  justify-content: center;
-  gap: 1rem;
-}
-
-/* Animation */
-.block[data-animate="true"]{
+[data-animate] {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
-.block[data-animate="true"]:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.block[data-animate="true"]:active {
-  transform: scale(0.97); /* or translateY(1px) */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.button:hover {
+[data-animate]:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.button:active {
+[data-animate]:active {
   transform: scale(0.97); /* or translateY(1px) */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
+/*--------------------SECTION 2--------------------*/
 
-.card:active {
-  transform: scale(0.97); /* or translateY(1px) */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 10rem;
-  background-color: rgba(0, 255, 255, 0.85); /* cyan with transparency */
-  display: none; /* hidden by default */
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.overlay-content {
-  background: white;
-  padding: 10rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  max-width: 80%;
-  max-height: 80%;
-  overflow: auto;
-}
 
 .wrap{
   display: flex;
@@ -188,13 +83,26 @@
   padding: 1rem 1rem;
 }
 
-.col{
+.docPlaceholder{
+  display: flex;
+  width: 40%;
+  height: 80%;
+  padding: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.index,
+.doc,
+.asset{
   padding: 5rem 2rem;
 }
 
-.index {
+.index{
   flex: 0 0 20%;
-  overflow-y: auto;
   display: none;
 }
 
@@ -218,7 +126,7 @@
   text-decoration: underline;
 }
 
-.doc {
+.doc{
   flex: 0 0 50%;
   overflow-y: auto;
   border: 1px solid #ddd;
@@ -234,14 +142,187 @@
   border-radius: 4px;
 }
 
+.doc__btnClose {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  border-radius: 30%;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.doc__btnClose:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.doc__btnClose:active{
+  transform: scale(0.95);
+}
+
 .asset{
-  width: 30%;
-  background-color: #fff;
+  flex: 0 0 30%;
+  align-items: center;
+  gap: 10%;
   display: none;
+}
+
+.asset.card{
+  display: flex;
+  width: 200px;
+  height: 200px;
+  padding: 8px 8px 16px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card.wrap{
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.card.head{
+  color: #000;
+  font-family: "Irish Grover";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card.body{
+  color: #000;
+  font-family: "Inclusive Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .wrap.show-sections .index,
 .wrap.show-sections .asset {
   display: flex;
   flex-direction: column;
+}
+
+/*--------------------SECTION 2--------------------*/
+
+.about{
+  display: flex;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  padding: 20%;
+  gap: 10%;
+}
+
+.aboutImage{
+  width: 20%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background: url("asset/image/image.jpeg") lightgray 50% / cover no-repeat;;
+}
+
+.aboutContent{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer{
+  display: flex;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.iconBtn{
+  padding: 8px;
+  border-radius: 30%;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.iconBtn:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.iconBtn:active{
+  transform: scale(0.95);
+}
+
+/* Full-screen semi-transparent backdrop */
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;                      /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);    /* subtle background blur */
+  z-index: 999;                  /* sit above page content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+/* When visible, fade in */
+.overlay-backdrop--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* The modal “panel” itself */
+.overlay {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  padding: 1.5rem 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+/* Close icon in the top-right corner */
+.overlay__btnClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 30%;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.overlay__btnClose:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.overlay__btnClose:active{
+  transform: scale(0.95);
 }
