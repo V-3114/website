@@ -97,18 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(console.error);
   });
 
-  document.body.addEventListener("click", e => {
-    const githubBtn = document.querySelector('.iconBtn[src$="github.svg"]');
-    if (!githubBtn) return;
-
+  document.body.addEventListener("click", (e) => {
+    // GitHub button click
+    const githubBtn = e.target.closest("#githubBtn");
     if (githubBtn) {
-      githubBtn.style.cursor = "pointer";
-      githubBtn.addEventListener("click", () => {
-        window.open("https://github.com/v-3114", "_blank", "noopener");
-      });
+      window.open("https://github.com/v-3114", "_blank", "noopener");
+    }
+  
+    // Mail button click → copy email
+    const mailBtn = e.target.closest("#mailBtn");
+    if (mailBtn) {
+      const email = "youremail@example.com";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email)
+          .then(() => alert("Email copied to clipboard!"))
+          .catch(err => console.error("Clipboard copy failed:", err));
+      } else {
+        alert("Clipboard API not supported in this browser or context");
+      }
     }
   });
-
+  
 
   // ——— Create Overlay ——————————————————————————————————
 
