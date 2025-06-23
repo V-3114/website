@@ -53,18 +53,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ——— Toggle logic for Section 2 ————————————————————————————
+
+  // ——— Toggle logic for Section 2 ————————————————————————————
 
   function bindWrapToggle() {
-    const wrap = document.getElementById("wrapToggle");
-    if (!wrap) return;
-
-    let opened = false;
-
-    wrap.addEventListener("click", e => {
-      const doc = e.target.closest(".docPlaceholder");
-      if (!doc) return;
-
+    const wrapEl = document.getElementById("wrapToggle");
+    if (wrapEl) {
+      wrapEl.dataset.opened = "false";
+    }
+    document.body.addEventListener("click", e => {
+      const wrap = document.getElementById("wrapToggle");
+      const docPlaceholder = e.target.closest("#wrapToggle .docPlaceholder");
+      if (!wrap || !docPlaceholder) return;
+  
+      const opened = wrap.dataset.opened === "true";
       if (!opened) {
         loadHtml("wrapToggle", "components/doc.html")
           .then(() => setupMarkdown("doc-markdown"))
@@ -73,12 +75,40 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         clearMarkdown("doc-markdown");
       }
-
+  
       wrap.classList.toggle("shrink");
       setTimeout(() => wrap.classList.toggle("show-sections"), 500);
-      opened = !opened;
+      wrap.dataset.opened = (!opened).toString();
     });
   }
+
+
+  // ——— Back-button (delegated) ——————————————————————————————
+
+  document.body.addEventListener("click", e => {
+    const backBtn = e.target.closest(".doc__btnClose");
+    if (!backBtn) return;
+
+    // clear the markdown & TOC
+    clearMarkdown("doc-markdown");
+
+    // reload section2 contents
+    loadHtml("section2", "components/section2.html")
+      .catch(console.error);
+  });
+
+  document.body.addEventListener("click", e => {
+    const githubBtn = document.querySelector('.iconBtn[src$="github.svg"]');
+    if (!githubBtn) return;
+
+    if (githubBtn) {
+      githubBtn.style.cursor = "pointer";
+      githubBtn.addEventListener("click", () => {
+        window.open("https://github.com/v-3114", "_blank", "noopener");
+      });
+    }
+  });
+
 
   // ——— Create Overlay ——————————————————————————————————
 
@@ -121,18 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!backdrop) return;
 
     if (e.target.closest('.overlay-trigger')) return;
-
-    // Click on close icon
-    if (e.target.matches('.overlay__btnClose')) {
-      backdrop.remove();
-      return;
-    }
-
-    // Click outside overlay
-    if (!e.target.closest('.overlay')) {
+    if (e.target.matches('.overlay__btnClose') || !e.target.closest('.overlay')) {
       backdrop.remove();
     }
   });
+
 
   // ——— Bootstrapping —————————————————————————————————————
 
