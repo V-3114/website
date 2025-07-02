@@ -154,15 +154,7 @@
       display: flex;
       width: 25%;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .file:hover{
-      transform: scale(1);
-    }
-
-    .file:active{
-      transform: scale(0.95);
+      gap: 2rem;
     }
 
     .file__placeholder{
@@ -173,6 +165,14 @@
       border-radius: 0.5rem;
       box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2);
       cursor: pointer;
+    }
+
+    .file__placeholder:hover{
+      transform: scale(1.05);
+    }
+
+    .file__placeholder:active{
+      transform: scale(1);
     }
    
   /* ========================== Index Styles ========================== */
