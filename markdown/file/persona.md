@@ -2,7 +2,7 @@
 
 <div style="display: flex; gap: 2rem;">
 
-<img src="path/to/image.jpg" width="100px"/>
+<img src="asset/file/persona/ram.gif" width="120px"/>
 
 <div style="flex: 1;">
 

@@ -1,4 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  function setupObserver() {
+    const headings = document.querySelectorAll("#docMarkdown h1, #docMarkdown h2, #docMarkdown h3, #docMarkdown h4");
+    const tocLinks = document.querySelectorAll(".index.markdown-body a");
+  
+    if (!headings.length) {
+      console.warn("⚠️ No headings found to observe.");
+      return;
+    }
+  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // remove previous active classes
+            tocLinks.forEach(link => link.classList.remove("active"));
+            // find corresponding ToC link
+            const id = entry.target.id;
+            const activeLink = document.querySelector(`.index.markdown-body a[href="#${id}"]`);
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
+        });
+      },
+      {
+        root: document.querySelector(".doc"),
+        threshold: 0.2
+      }
+    );
+  
+    headings.forEach(h => observer.observe(h));
+  }
+  
   
   function typeWriter() {
     const text = "Research AI";
@@ -244,19 +278,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   Promise.all([
     loadHtml("section1", "component/section 1/section1.html")
-    .then(() => {
-      typeWriter();
-    }),
-
+      .then(() => {
+        typeWriter();
+      }),
+  
     loadHtml("section2", "component/section 2/section2.html")
       .then(() => setupMarkdown("docMarkdown"))
       .then(() => makeToc("docMarkdown"))
+      .then(() => setupObserver())    // ← add this here
       .catch(console.error),
-
+  
     loadHtml("section3", "component/section 3/section3.html")
-  ]).then(() => {
+  ])
+  .then(() => {
     setupMarkdown("aboutMarkdown");
-  }).catch(console.error);
+  })
+  .catch(console.error);
+  
 
   // ✅ Now works!
   updateDateTime();
