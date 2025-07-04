@@ -74,7 +74,7 @@ Ram is transitioning into UX research from a different academic or professional 
 
 <div style="display: flex; gap: 2rem;">
 
-<img src="path/to/image.jpg" width="100px"/>
+<img src="asset/file/persona/aisha.gif" width="100px"/>
 
 <div style="flex: 1;">
 
