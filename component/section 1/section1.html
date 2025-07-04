@@ -1,41 +1,86 @@
-<div style="display: flex; flex-direction: column; width: 25%; height: 99%; gap: 1%;">
-  <div class="block block__placeholder" style="background-color: #010C13;" data-trigger data-function="createOverlay" data-parent-id="section1" data-component-path="component/section 1/block/art.html">
-    <div class="block block__card" style="background-color: #DBD3D8;">
-      <img class="card__image" src="asset/block/art/sketch.jpg" alt="image" style="background: #B4B4B4; /* optional background color */"/>
-      <div class="card__label markdown-body">Sketches</div>
+<div class="about">
+    <!-- TOP ROW -->
+    <div class="about__row">
+        <!-- Image + About -->
+        <div class="about__section" style="flex-direction: row; align-items: center;">
+            <picture>
+                <source srcset="asset/about/image.jpg" type="image/webp">
+                <img class="about__image" src="asset/about/image.jpg" width="150" height="150" alt="Profile"/>
+            </picture>
+            <div>
+                <h2 class="markdown-body">Yash Swami</h2>
+                <p class="markdown-body" style="margin: 0 0 1rem 0; font-size: small; color: #555;">
+                    yash.swami@proton.me | New Delhi, IN
+                </p>
+                <p class="markdown-body">
+                    Hi, I play games, create designs, sketch, listen to music, and work on prototypes.
+                    I also love exploring and experimenting, and I have a natural tendency to engage with people,
+                    study psychology, or simply observe.
+                    <br><br>
+                    I simply want to build and experience cool stuff.
+                </p>
+            </div>
+    </div>
+
+    <!-- Education (right of name section) -->
+    <div class="about__section">
+        <h2 class="markdown-body">Education</h2>
+        <p class="markdown-body">
+            <b>Delhi University</b> | New Delhi <br>
+            Bachelor of Psychology (1st Year)<br><br>
+            <b>Certificates</b> | Coursera <br>
+            Google UX Design Professional Certificate
+        </p>
+    </div>
+
+    </div>
+
+    <!-- MIDDLE ROW: Work Experience + Technologies + Skills -->
+    <div class="about__row">
+        <!-- Work Experience -->
+        <div class="about__section">
+            <h2 class="markdown-body">Work Experience</h2>
+            <p class="markdown-body">
+                <b>Concentrix</b> | Gurgaon, Haryana <br>
+                Senior Advisor (Sept. 2024 – May 2025)
+            </p>
+            <p class="markdown-body">
+                As a Senior Advisor in chat support, I specialized in understanding customer needs,
+                resolving issues quickly, and communicating with clarity and empathy.
+                My role focused on enhancing customer satisfaction and retention by delivering effective solutions
+                and ensuring users felt valued throughout their journey.
+                This experience strengthened my skills in user-centered problem-solving, attentive listening,
+                and providing seamless service interactions—all highly relevant to a UX-focused career.
+            </p>
+        </div>
+
+        <!-- Right Column: Technologies + Skills + Interests -->
+        <div class="about__section">
+            <!-- Technologies -->
+            <div>
+                <h2 class="markdown-body">Technologies</h2>
+                <p class="markdown-body">
+                    User Research, Wireframing & Prototyping, Interaction Design (IxD),
+                    Information Architecture (IA), Visual Design, Front-End Development.
+                </p>
+            </div>
+            <!-- Skills -->
+            <div>
+                <h2 class="markdown-body">Skills</h2>
+                <p class="markdown-body">
+                    Communication skills, Active Listening, Empathy & Patience,
+                    Problem-Solving, Attention to Detail, Critical Thinking.
+                </p>
+            </div>
+            <!-- Interests -->
+            <div>
+                <h2 class="markdown-body">Interests</h2>
+                <p class="markdown-body">
+                I enjoy learning new and intriguing topics, coding (basic Python, HTML, CSS, and JS),
+                sketching and creative projects, reading books, playing games
+                (I’ve beaten Elden Ring and Sekiro), and listening to music.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="block block__placeholder" style="background-color: #564138;" data-trigger data-function="createOverlay" data-parent-id="section1" data-component-path="component/section 1/block/sekiro.html">
-    <div class="block block__card" style="background-color: #F7FFF7;">
-      <img class="card__image" src="asset/block/game/sekiro.jpg" alt="image" style="background: #000000; /* optional background color */"/>
-      <div class="card__label markdown-body">Games</div>
-    </div>
-  </div>
-</div>
-
-<div class="block block__placeholder" style="width: 50%; height: 99%; align-self: center;" data-trigge data-function="createOverlay" data-parent-id="section1" data-component-path="component/section 1/block/resume.html">
-  <div class="block block__card" style="background-color: #fff; border-radius: 1rem;">
-    <div class="card__text markdown-body">MY PORTFOLIO</div>
-    <div class="card__label markdown-body">ポートフォリオ - 時間の無駄</div>
-    <img style="position: absolute; bottom: 4rem; width: 24px; aspect-ratio: 1/1;" src="asset/block/portfolio/down.gif" alt="image"/>
-  </div>
-</div>
-
-<div style="display: flex; flex-direction: column; width: 25%; height: 99%; gap: 1%;">
-  <div class="block block__placeholder" style="background-color: #75ABBC;" data-trigger data-function="playMusic" data-music-src="asset/block/music/nightcall.mp3">
-    <div class="block block__card" style="background-color: #D62828;">
-      <img class="card__image" src="asset/block/music/music.png" alt="image" style="background: #000; /* optional background color */"/>
-      <div class="card__label" style="height: 100%; font-size: 2rem;">
-        ▶
-      </div>
-    </div>
-  </div>
-
-  <div class="block block__placeholder" style="background-color: #DFE0E2;">
-    <div class="block block__card" style="background-color: #fff; border-radius: 1rem;">
-      <div class="card__text markdown-body" id="datetime"></div>
-    </div>
-  </div>
-</div>
-

@@ -206,8 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
         sec.style.overflow = isLocked ? "hidden" : "";
       });
     
-      const section2 = document.getElementById("section2");
-      section2.style.overflow = isLocked ? "auto" : "hidden";
+      const section3 = document.getElementById("section3");
+      section3.style.overflow = isLocked ? "auto" : "hidden";
     
       el.src = isLocked 
         ? "icon/lock.svg" 
@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
         : "Unlocked";
     
       if (isLocked) {
-        const el = document.getElementById("section2");
+        const el = document.getElementById("section3");
         el.scrollIntoView({
           behavior: "smooth",
           block: "start"
@@ -277,24 +277,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   Promise.all([
-    loadHtml("section1", "component/section 1/section1.html")
+    loadHtml("section2", "component/section 2/section2.html")
       .then(() => {
         typeWriter();
       }),
   
-    loadHtml("section2", "component/section 2/section2.html")
+    loadHtml("section3", "component/section 3/section3.html")
       .then(() => setupMarkdown("docMarkdown"))
       .then(() => makeToc("docMarkdown"))
       .then(() => setupObserver())    // ← add this here
       .catch(console.error),
   
-    loadHtml("section3", "component/section 3/section3.html")
+    loadHtml("section1", "component/section 1/section1.html")
   ])
   .then(() => {
     setupMarkdown("aboutMarkdown");
   })
-  .catch(console.error);
-  
+  .catch(console.error),
+  loadHtml("section4", "component/section 4/section4.html")
+  .catch(console.error),
 
   // ✅ Now works!
   updateDateTime();

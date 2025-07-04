@@ -1,5 +1,1 @@
-<img class="icon__button button__close" src="assets/icons/close.svg" alt="Close" width="40px" height="40px" data-click-trigger data-function="Close"/>
-<video width="100%" controls>
-      <source src="assets/sekiro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-</video>
+So, I wasted 300 spirit emblems, spent more than 10hours, and fought more than 150 fights to beat this guy and therefore one of the hardest games> Enjoy:)

@@ -33,7 +33,7 @@ Three virtual user types were selected:
 
 The goal was to include diverse potential users with varying experience levels, research methods, and roles—while also ensuring the informed decisions were relevant and within scope.
 
-Based on the <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 2/file/UserType.html"><u>User Type</u></span> and the validation of my own assumptions, the following challenges were commonly observed:
+Based on the <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 3/file/UserType.html"><u>User Type</u></span> and the validation of my own assumptions, the following challenges were commonly observed:
 
 - Unstructured research workflows
 - Time-consuming data analysis
@@ -75,11 +75,11 @@ For the sake of readability and flow, this document presents the empathize phase
 
 # <div style="text-align: center;">The MVP</div>
 
-Empathy is a deeply studied concept in design, and while numerous frameworks exist, the key is choosing those that best support your goals and constraints. To bring the identified user types to life, I created <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 2/file/Persona.html"><u>Persona</u></span> — a method of adding emotion and perspective to user data.
+Empathy is a deeply studied concept in design, and while numerous frameworks exist, the key is choosing those that best support your goals and constraints. To bring the identified user types to life, I created <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 3/file/Persona.html"><u>Persona</u></span> — a method of adding emotion and perspective to user data.
 
 I chose not to include empathy maps or user stories, as explained in *My Design Framework* section.
 
-By mapping <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 2/file/JourneyMap.html"><u>Journey Maps</u></span> for each persona, the *Minimum Viable Product (MVP)* was defined:
+By mapping <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 3/file/JourneyMap.html"><u>Journey Maps</u></span> for each persona, the *Minimum Viable Product (MVP)* was defined:
 
 - Goal definition aid
 - Research plan generator
@@ -104,11 +104,11 @@ With scope, pain points, and goal opportunities clearly defined, the project adv
 
 # <div style="text-align: center;">The Ideation</div>
 
-In user-centered design, it’s essential to validate early ideas using insights from the research phase. One such method used here was <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 2/file/ValueProposition.html"><u>Value Propositions</u></span> — mapping all potential features, categorizing them based on the project’s core values and MVP criteria, and aligning them with specific personas.
+In user-centered design, it’s essential to validate early ideas using insights from the research phase. One such method used here was <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 3/file/ValueProposition.html"><u>Value Propositions</u></span> — mapping all potential features, categorizing them based on the project’s core values and MVP criteria, and aligning them with specific personas.
 
 This approach ensures that the first design iteration focuses on solving real user problems, rooted in research. Attached value proposition maps further illustrate this process.
 
-I then skipped some early ideation methods, quickly sketched <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 2/file/UserFlow.html"><u>User Flows</u></span>, created paper wireframes, and digitized them in Figma for early prototyping.
+I then skipped some early ideation methods, quickly sketched <span data-trigger data-function="createOverlay" data-parent-id="section2" data-component-path="component/section 3/file/UserFlow.html"><u>User Flows</u></span>, created paper wireframes, and digitized them in Figma for early prototyping.
 
 A single screen was designed for each core feature to keep the interface goal-oriented. Normally, you would test these prototypes with primary research methods. However, in this case, I moved directly to high-fidelity mockups, deferring user testing for future iterations.
 
