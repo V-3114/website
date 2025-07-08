@@ -1,9 +1,11 @@
+<div style="min-height: 120vh; display: flex; flex-direction: column; justify-content: center;">
+
 <div style="display: flex; width: 100%; flex-direction: column; align-items: center; justify">
 
 # <div style="text-align: center;">UX Research</div>
     
 <div style="width: 90%;">
-    Research is a core component in designing a lasting user experience. It brings to light the major challenges our potential users would face, help detect early design traps, and inform the foundation on which the entire design sits upon.
+    Research is a core component in designing a lasting user experience. It brings to light major challenges the potential users would face, help detect early design traps, and inform the foundation on which the entire design sits upon.
 </div>
 
 <br>
@@ -16,9 +18,11 @@
 
 </div>
 
----
+</div>
 
-<br>
+<div style="min-height: 120vh; display: flex; flex-direction: column; justify-content: flex-start;">
+
+# <div style="text-align: center;">Problem Statement</div>
 
 <div style="display: flex; width: 100%; flex-direction: column; align-items: center;">
 
@@ -32,14 +36,15 @@
 
 <br><br>
 
-<div style="display: flex; width: 70%; height: auto; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+<div style="display: flex; width: 100%; height: auto; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
 
-<div style="display: flex; gap: 2rem;">
+<div class="persona">
 
 <img src="asset/file/persona/ram.gif" width="120px"/>
 
 <div style="flex: 1;">
 
+- **Name:** Ram Mehta 
 - **Role:** Aspiring UX Designer 
 - **Age:** 21  
 - **Gender:** Male  
@@ -55,14 +60,15 @@
 
 <br><br>
 
-<div style="display: flex; width: 70%; height: auto; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+<div style="display: flex; width: 100%; height: auto; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
 
-<div style="display: flex; gap: 2rem;">
+<div class="persona">
 
 <img src="asset/file/persona/aisha.gif" width="100px"/>
 
 <div style="flex: 1;">
 
+- **Name:** Aisha Khan
 - **Role:** Solo UX Freelancer
 - **Age:** 34  
 - **Gender:** Female  
@@ -78,14 +84,15 @@
 
 <br><br>
 
-<div style="display: flex; width: 70%; height: auto; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+<div style="display: flex; width: 100%; height: auto; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
 
-<div style="display: flex; gap: 2rem;">
+<div class="persona">
 
 <img src="path/to/image.jpg" width="100px"/>
 
 <div style="flex: 1;">
 
+- **Name:** Ravi Deshmukh
 - **Role:** Senior UX Researcher  
 - **Age:** 35  
 - **Gender:** Male  
@@ -101,7 +108,13 @@
 
 </div>
 
----
+</div>
+
+<div style="min-height: 120vh; display: flex; flex-direction: column; justify-content: center;">
+
+# <div style="text-align: center;">Goal Statement</div>
+
+It's clear that UX Researcher and Designers themselves are not having the easiest time designing experience for other users.
 
 <div style="display: flex; width: 100%; flex-direction: column; align-items: center; justify">
 
@@ -117,3 +130,65 @@
 | Unstructured research workflows  | AI-assisted planning for goals and methodologies |
 
 </div>
+
+And so, I present to you...
+
+</div>
+
+<div style="min-height: 120vh; display: flex; flex-direction: column; justify-content: center;">
+
+<div style="display: flex; width: 100%; flex-direction: column; align-items: center; justify">
+
+# <div style="text-align: center; color: #C94057;">Research AI</div>
+
+</div>
+
+</div>
+
+<div style="min-height: 120vh; display: flex; flex-direction: column; justify-content: flex-start;">
+
+<img src="asset/block/design/landing-page.svg" style="width: 100%;"/>
+
+<br><br>
+
+<img src="asset/block/design/cta-summary.svg" style="width: 100%;"/>
+
+<br><br>
+
+<img src="asset/block/design/cta-tags.svg" style="width: 100%;"/>
+
+<br><br>
+
+<img src="asset/block/design/cta-transcript.svg" style="width: 100%;"/>
+
+<br><br>
+
+<img src="asset/block/design/cta-document.svg" style="width: 100%;"/>
+
+</div>
+
+<div style="min-height: 120vh; display: flex; flex-direction: column; justify-content: center;">
+
+# <div style="text-align: center;">Success Metrics</div>
+
+- Time saved in planning and synthesis
+- User satisfaction with insight understanding
+- Clarity and completeness of documentation
+- Return usage frequency
+
+</div>
+
+<style>
+    .persona{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+      @media (max-width: 600px) {
+    .persona {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+</style>
