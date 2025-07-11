@@ -1,1 +1,0 @@
-So, I wasted 300 spirit emblems, spent more than 10hours, and fought more than 150 fights to beat this guy and therefore one of the hardest games> Enjoy:)

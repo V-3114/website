@@ -1,1 +1,0 @@
-<img class="icon__button button__close" src="assets/icons/close.svg" alt="Close" width="40px" height="40px" data-click-trigger data-function="Close"/>
