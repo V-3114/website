@@ -79,7 +79,18 @@
     align-items: center;
     background-color: whitesmoke;
     padding: 100px 200px;
-    gap: 64px;
+    gap: 32px;
+  }
+
+  .visual{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    background-color: whitesmoke;
+    padding-bottom: 150px;
+    gap: 16px;
   }
   
   .skills {
@@ -247,6 +258,15 @@
       min-height: 80vh;
       align-items: center;
     }
+
+    .technologies{
+      gap: 32px;
+    }
+
+    .visual{
+      display: flex;
+      flex-direction: column;
+    }
   
     .image-and-about {
       min-height: auto;
@@ -282,7 +302,7 @@
   
     .floaty.left,
     .floaty.right {
-      text-align: cente;
+      text-align: center;
     }
   }
   
